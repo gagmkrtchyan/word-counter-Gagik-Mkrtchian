@@ -1,4 +1,4 @@
-function changeColor()
+function changeColor() // a function that gives 3 random numbers between 0-255 and assings to bg
     {
         var x = Math.floor(Math.random() * 256);
         var y = Math.floor(Math.random() * 256);
@@ -8,17 +8,17 @@ function changeColor()
 
     let input = prompt('Input text'); //a variable that stores user input
     let wordCount, letterCount, sentenceCount;  // variables for output
-    if(input!==null)
+    if(input!==null) //an exception if user cancels input
     {
         document.getElementById("cancelText").style.display="none";
     }
-    else
+    else // the other case
     {
         alert('You hit the cancel button!');
         document.getElementById("cancelText").style.display="block";
 
     }
-    function countLetters(text)
+    function countLetters(text) // function that counts letters in text
     {
         var words=text.split(' ');
         var letters=0;
@@ -29,7 +29,7 @@ function changeColor()
         var dots=text.split('.');
         return letters-dots.length+1;
     }
-    function countWords(text)
+    function countWords(text) // same for words
     {
         
         if(!text.charAt(0))
@@ -40,7 +40,7 @@ function changeColor()
         return words.length;
         
     }
-    function countSentences(text)
+    function countSentences(text)// same for sentences
     {
         var sentences=text.split('.');
         return sentences.length-1;
@@ -48,7 +48,7 @@ function changeColor()
     letterCount=countLetters(input);
     wordCount=countWords(input);
     sentenceCount=countSentences(input);
-    document.getElementById('word').innerHTML = wordCount!==1?`There are ${wordCount} words`:`There is ${wordCount} word`; 
+    document.getElementById('word').innerHTML = wordCount!==1?`There are ${wordCount} words`:`There is ${wordCount} word`; // giving html elements their values
     document.getElementById('letter').innerHTML =  letterCount!==1?`There are ${letterCount} letters`:`There is ${letterCount} letter`; 
     document.getElementById('sentence').innerHTML =  sentenceCount!==1?`There are ${sentenceCount} sentences`:`There is ${sentenceCount} sentence`;
     
